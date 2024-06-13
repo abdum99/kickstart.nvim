@@ -61,6 +61,10 @@ return {
           close = true,
         },
       },
+
+      -- sync nvim-tree to cwd (:pwd)
+      -- useful when switching sessions
+      sync_root_with_cwd = true,
     }
 
     vim.keymap.set('n', '<C-t>', ':NvimTreeFindFile<CR>')

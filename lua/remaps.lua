@@ -1,6 +1,16 @@
 vim.keymap.set('v', '<leader>y', '+y')
 
+-- Clear search highlights on <Esc>
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Tab
+-- TODO: use telescope here instead
+vim.keymap.set('n', '<leader>tt', ':tabnew')
+
+vim.keymap.set('n', '<leader>tn', ':tabnext<CR>')
+vim.keymap.set('n', '<leader>tp', ':tabprevious<CR>')
+vim.keymap.set('n', '<leader>th', ':tabfirst<CR>')
+vim.keymap.set('n', '<leader>tl', ':tablast<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })

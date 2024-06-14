@@ -5,4 +5,5 @@
 return {
   require 'custom.plugins.nvim-tree',
   require 'custom.plugins.persisted',
+  require 'custom.plugins.barbar',
 }

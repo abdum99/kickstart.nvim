@@ -3,6 +3,19 @@ vim.keymap.set('v', '<leader>y', '+y')
 -- Clear search highlights on <Esc>
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Buffer Controls
+-------------------------
+-- <Alt-[hjkl]> to navigate
+-- e.g.:
+-- ˚ = <Alt-k>
+vim.keymap.set('n', '˚', '<Cmd>BufferNext<CR>')
+vim.keymap.set('n', '∆', '<Cmd>BufferPrevious<CR>')
+vim.keymap.set('n', '˙', '<Cmd>BufferFirst<CR>')
+vim.keymap.set('n', '¬', '<Cmd>BufferLast<CR>')
+
+-- <Alt-q> to close buffer
+vim.keymap.set('n', 'œ', '<Cmd>BufferClose<CR>')
+
 -- Tab
 -- TODO: use telescope here instead
 vim.keymap.set('n', '<leader>tt', ':tabnew')

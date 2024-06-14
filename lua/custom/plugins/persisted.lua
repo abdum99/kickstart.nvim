@@ -17,10 +17,12 @@ return {
     })
 
     -- before saving a session close nvim-tree to avoid empty nvim-tree (or I think netrw buffer) problem
+    vim.opt.sessionoptions:append 'globals'
     vim.api.nvim_create_autocmd({ 'User' }, {
       pattern = 'PersistedSavePre',
       group = group,
       callback = function(session)
+        vim.api.nvim_exec_autocmds('User', { pattern = 'SessionSavePre' })
         require('nvim-tree.api').tree.close_in_all_tabs()
       end,
     })

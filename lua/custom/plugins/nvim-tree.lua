@@ -11,7 +11,7 @@ local function custom_on_attach(bufnr)
   -- custom mappings
   vim.keymap.set('n', '?', api.tree.toggle_help, opts 'Help')
   vim.keymap.set('n', '<C-]>', api.tree.change_root_to_node, opts 'CD')
-  vim.keymap.set('n', '<C-k>', api.node.show_info_popup, opts 'Info')
+  vim.keymap.set('n', 'K', api.node.show_info_popup, opts 'Info')
 
   vim.keymap.set('n', '<C-r>', api.fs.rename_sub, opts 'Rename: Omit Filename')
   vim.keymap.set('n', '<C-t>', api.node.open.tab, opts 'Open: New Tab')

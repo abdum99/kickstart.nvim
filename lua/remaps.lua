@@ -5,6 +5,10 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Buffer Controls
 -------------------------
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-P>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-N>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-D>', '<Cmd>BufferPin<CR>', { desc = 'Pin Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-X>', '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
 -- <Alt-[hjkl]> to navigate
 -- e.g.:
 -- ˚ = <Alt-k>

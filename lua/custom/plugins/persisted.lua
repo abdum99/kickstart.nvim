@@ -23,7 +23,7 @@ return {
       group = group,
       callback = function(session)
         vim.api.nvim_exec_autocmds('User', { pattern = 'SessionSavePre' })
-        require('nvim-tree.api').tree.close_in_all_tabs()
+        -- require('nvim-tree.api').tree.close_in_all_tabs()
       end,
     })
 
@@ -33,6 +33,18 @@ return {
       group = group,
       callback = function(session)
         require('nvim-tree.api').tree.open()
+      end,
+    })
+
+    vim.api.nvim_create_autocmd({ 'User' }, {
+      pattern = 'PersistedTelescopeLoadPre',
+      group = group,
+      callback = function(session)
+        -- Save the currently loaded session using a global variable
+        require('persisted').save { session = vim.g.persisted_loaded_session }
+
+        -- Delete all of the open buffers
+        vim.api.nvim_input '<ESC>:%bd!<CR>'
       end,
     })
   end,

@@ -68,6 +68,6 @@ return {
     }
 
     vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
-    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+    vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
   end,
 }

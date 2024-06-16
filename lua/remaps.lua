@@ -9,16 +9,9 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<Cmd>BufferPrevious<CR>', { desc = '
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-;>', '<Cmd>BufferPin<CR>', { desc = 'Pin Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
--- <Alt-[hjkl]> to navigate
--- e.g.:
--- ˚ = <Alt-k>
-vim.keymap.set('n', '˚', '<Cmd>BufferNext<CR>')
-vim.keymap.set('n', '∆', '<Cmd>BufferPrevious<CR>')
-vim.keymap.set('n', '˙', '<Cmd>BufferFirst<CR>')
-vim.keymap.set('n', '¬', '<Cmd>BufferLast<CR>')
 
 -- <Alt-q> to close buffer
-vim.keymap.set('n', 'œ', '<Cmd>BufferClose<CR>')
+vim.keymap.set('n', '<C-x>', '<Cmd>BufferClose<CR>')
 
 -- Tab
 -- TODO: use telescope here instead

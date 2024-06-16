@@ -1,12 +1,10 @@
 local function custom_on_attach(bufnr)
   local api = require 'nvim-tree.api'
 
+  -- use opts to make sure mappings are applied to nvim-tree bufnr
   local function opts(desc)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
-
-  -- default mappings
-  -- api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
   vim.keymap.set('n', '?', api.tree.toggle_help, opts 'Help')
@@ -17,6 +15,7 @@ local function custom_on_attach(bufnr)
   vim.keymap.set('n', '<C-t>', api.node.open.tab, opts 'Open: New Tab')
 
   vim.keymap.set('n', '<BS>', api.node.navigate.parent_close, opts 'Close Directory')
+
   vim.keymap.set('n', '<CR>', api.node.open.edit, opts 'Open')
   vim.keymap.set('n', '<Tab>', api.node.open.preview, opts 'Open Preview')
 

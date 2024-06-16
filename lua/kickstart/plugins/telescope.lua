@@ -68,14 +68,17 @@ return { -- Fuzzy Finder (files, lsp, etc)
     }
 
     -- Enable Telescope extensions if they are installed
-    pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'ui-select')
-    pcall(require('telescope').load_extension, 'persisted')
+    --
+    local telescope = require 'telescope'
+    pcall(telescope.load_extension, 'fzf')
+    pcall(telescope.load_extension, 'ui-select')
+    pcall(telescope.load_extension, 'persisted')
+    pcall(telescope.load_extension, 'scope')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
-    local telescope = require 'telescope'
     local persisted = telescope.extensions.persisted
+
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
@@ -86,7 +89,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
     vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
-    vim.keymap.set('n', '<leader><leader>', builtin.buffers, {
+    vim.keymap.set('n', '<leader><leader>', '<Cmd>Telescope scope buffers<CR>', {
       desc = '[ ] Find existing buffers',
       -- sort_mru = true,
       -- ignore_current_buffer = true,

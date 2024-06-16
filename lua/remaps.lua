@@ -5,8 +5,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Buffer Controls
 -------------------------
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<Cmd>bprev<CR>', { desc = 'Previous Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<Cmd>bnext<CR>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-;>', '<Cmd>BufferPin<CR>', { desc = 'Pin Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
 

@@ -1,6 +1,10 @@
 return {
   'olimorris/persisted.nvim',
   lazy = false, -- make sure the plugin is always loaded at startup
+  dependencies = {
+    'nvim-tree/nvim-tree.lua',
+    'hedyhli/outline.nvim',
+  },
   config = function()
     require('persisted').setup {
       autoload = true,
@@ -23,6 +27,7 @@ return {
       group = group,
       callback = function(session)
         vim.api.nvim_exec_autocmds('User', { pattern = 'SessionSavePre' })
+        require('outline').close()
         -- require('nvim-tree.api').tree.close_in_all_tabs()
       end,
     })

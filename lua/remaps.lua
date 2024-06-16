@@ -43,11 +43,12 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
+-- WINDOW managemenet
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-S-H>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-S-L>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-S-J>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-S-K>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-q>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-e>', '<C-w><C-l>', { desc = 'Move focus to the left window' })
+--  <Ctrl-Shift-[hjkl]>
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-H>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-L>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-J>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-K>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })

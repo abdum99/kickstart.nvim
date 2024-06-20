@@ -6,8 +6,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Buffer Controls
 -------------------------
 
-vim.keymap.set({ 'n', 'i', 'v' }, '<S-H>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<S-L>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, '[<leader>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, ']<leader>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-;>', '<Cmd>lua print("TODO: pin tabs")<CR>', { desc = 'Pin Buffer' })
@@ -15,6 +15,14 @@ vim.keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Clo
 
 -- <Alt-q> to close buffer
 vim.keymap.set('n', '<C-x>', '<Cmd>BufferClose<CR>')
+
+-- WINDOW managemenet
+--  See `:help wincmd` for a list of all window commands
+--  <Ctrl-Shift-[hjkl]>
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-H>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-L>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-J>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-K>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Tab
 -- TODO: use telescope here instead
@@ -45,15 +53,3 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
--- WINDOW managemenet
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the bottom window' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the top window' })
---  <Ctrl-Shift-[hjkl]>
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-H>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-L>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-J>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-K>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })

@@ -39,7 +39,7 @@ require 'lazy-plugins'
 
 -- Theme
 vim.o.background = 'dark'
-vim.cmd.colorscheme 'tokyonight'
+vim.cmd.colorscheme 'bamboo'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

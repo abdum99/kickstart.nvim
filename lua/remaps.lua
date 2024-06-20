@@ -5,8 +5,11 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Buffer Controls
 -------------------------
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+
+vim.keymap.set({ 'n', 'i', 'v' }, '<S-H>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<S-L>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, '[<leader>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
+vim.keymap.set({ 'n', 'i', 'v' }, ']<leader>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-;>', '<Cmd>lua print("TODO: pin tabs")<CR>', { desc = 'Pin Buffer' })
 vim.keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
 
@@ -45,8 +48,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 -- WINDOW managemenet
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-q>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-e>', '<C-w><C-l>', { desc = 'Move focus to the left window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the bottom window' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the top window' })
 --  <Ctrl-Shift-[hjkl]>
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-H>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-S-L>', '<C-w><C-l>', { desc = 'Move focus to the right window' })

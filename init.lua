@@ -12,6 +12,8 @@ vim.g.have_nerd_font = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.tabstop = 4
+
 -- NeoVim Options
 require 'options'
 
@@ -36,7 +38,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require 'lazy-plugins'
 
 -- Theme
-vim.cmd.colorscheme 'bamboo'
+vim.o.background = 'dark'
+vim.cmd.colorscheme 'tokyonight'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

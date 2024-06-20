@@ -13,7 +13,7 @@ return {
       hide_cursor = true,
     },
     preview_window = {
-      auto_preview = true,
+      auto_preview = false,
       live = true,
     },
 

@@ -106,8 +106,8 @@ return {
       sync_root_with_cwd = true,
     }
 
-    vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
-    vim.keymap.set('n', '<leader>E', ':NvimTreeToggle<CR>')
+    vim.keymap.set('n', '<leader>E', ':NvimTreeFindFile<CR>')
+    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
     vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
     vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
 

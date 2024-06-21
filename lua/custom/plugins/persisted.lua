@@ -32,7 +32,7 @@ return {
       group = group,
       callback = function()
         vim.api.nvim_exec_utocmds('User', { pattern = 'SessionSavePre' })
-        require('outline').close()
+        -- require('outline').close()
         -- require('nvim-tree.api').tree.close_in_all_tabs()
       end,
     })

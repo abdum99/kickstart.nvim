@@ -111,7 +111,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         grep_open_files = true,
         prompt_title = 'Live Grep in Open Files',
       }
-    end, { desc = '[S]earch [/] in Open Files' })
+    end, { desc = '[F]ind [/] in Open Files' })
 
     -- Shortcut for searching your Neovim configuration files
     vim.keymap.set('n', '<leader>fn', function()

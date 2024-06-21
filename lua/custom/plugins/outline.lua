@@ -1,7 +1,7 @@
 return {
   'hedyhli/outline.nvim',
   keys = { -- Example mapping to toggle outline
-    { '<leader>o', '<cmd>OutlineOpen<CR>', desc = 'Toggle outline' },
+    { '<leader>o', '<cmd>Outline<CR>', desc = 'Toggle outline' },
   },
   opts = {
     -- Your setup opts here
@@ -13,8 +13,9 @@ return {
       hide_cursor = true,
     },
     preview_window = {
-      auto_preview = false,
-      live = true,
+      auto_preview = true,
+      live = false,
+      open_hover_on_preview = true,
     },
 
     keymaps = {

@@ -12,8 +12,10 @@ keymap.set('n', '<leader>b', '<Cmd>BufferPick<CR>', { desc = 'Buffer Pick' })
 -- Sadly I can't map '<C-[>' bc that's the same sequence as <Esc> "(
 keymap.set({ 'n', 'i', 'v' }, '<C-q>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set({ 'n', 'i', 'v' }, '<C-e>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+keymap.set('n', '[[', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '[<leader>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '<leader>[', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
+keymap.set('n', ']]', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', ']<leader>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', '<leader>]', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 

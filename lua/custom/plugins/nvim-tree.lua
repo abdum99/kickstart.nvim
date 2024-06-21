@@ -7,6 +7,7 @@ local function custom_on_attach(bufnr)
   end
 
   -- custom mappings
+  vim.keymap.set('n', 'q', api.tree.close, opts '[Q]uit NvimTree')
   vim.keymap.set('n', '?', api.tree.toggle_help, opts 'Help')
   vim.keymap.set('n', '<C-]>', api.tree.change_root_to_node, opts 'CD')
   vim.keymap.set('n', 'K', api.node.show_info_popup, opts 'Info')
@@ -107,7 +108,7 @@ return {
     }
 
     vim.keymap.set('n', '<leader>E', ':NvimTreeFindFile<CR>')
-    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+    vim.keymap.set('n', '<leader>e', ':NvimTreeOpen<CR>')
     vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
     vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
 

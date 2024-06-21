@@ -10,8 +10,8 @@ keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 keymap.set('n', '<leader>b', '<Cmd>BufferPick<CR>', { desc = 'Buffer Pick' })
 
 -- Sadly I can't map '<C-[>' bc that's the same sequence as <Esc> "(
-keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
-keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
+keymap.set({ 'n', 'i', 'v' }, '<C-q>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
+keymap.set({ 'n', 'i', 'v' }, '<C-e>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set({ 'n', 'i', 'v' }, '[<leader>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set({ 'n', 'i', 'v' }, ']<leader>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 
@@ -25,10 +25,10 @@ keymap.set('n', '<C-x>', '<Cmd>BufferClose<CR>')
 -------------------------
 --  See `:help wincmd` for a list of all window commands
 --  <Ctrl-Shift-[hjkl]>
-keymap.set({ 'n', 'i', 'v' }, '<C-S-H>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-keymap.set({ 'n', 'i', 'v' }, '<C-S-L>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-keymap.set({ 'n', 'i', 'v' }, '<C-S-J>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-keymap.set({ 'n', 'i', 'v' }, '<C-S-K>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+keymap.set({ 'n', 'i', 'v' }, '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+keymap.set({ 'n', 'i', 'v' }, '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+keymap.set({ 'n', 'i', 'v' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Tabs
 -------------------------

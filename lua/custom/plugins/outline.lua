@@ -1,7 +1,7 @@
 return {
   'hedyhli/outline.nvim',
   keys = { -- Example mapping to toggle outline
-    { '<leader>o', '<cmd>Outline<CR>', desc = 'Toggle outline' },
+    { '<leader>o', '<cmd>OutlineOpen<CR>', desc = 'Toggle outline' },
   },
   opts = {
     -- Your setup opts here
@@ -20,6 +20,7 @@ return {
     keymaps = {
       close = { 'q' }, -- <Esc> shold not close outline
       focus_code = { 'Esc' },
+      hover_symbol = { 'gh' },
     },
   },
 }

@@ -7,6 +7,7 @@ return {
   },
   config = function()
     require('persisted').setup {
+      autosave = true,
       autoload = true,
       -- use_git_branch = true,
       -- TODO: use on_autoload_no_session to load use a dashboard (for now prob just do intro)
@@ -20,42 +21,21 @@ return {
       clear = false,
     })
 
-    -- before saving a session close nvim-tree to avoid empty nvim-tree (or I think netrw buffer) problem
-    -- vim.opt.sessionoptions:append 'globals'
     vim.opt.sessionoptions = { -- required
       'buffers',
       'tabpages',
-      'globals',
+      'globals', -- scope and barbar use this
+      'curdir' -- save cwd
     }
+
+    -- This allows barbar to store info about order of buffers
     vim.api.nvim_create_autocmd({ 'User' }, {
       pattern = 'PersistedSavePre',
       group = group,
       callback = function()
-        vim.api.nvim_exec_utocmds('User', { pattern = 'SessionSavePre' })
-        -- require('outline').close()
-        -- require('nvim-tree.api').tree.close_in_all_tabs()
+        vim.api.nvim_exec_autocmds('User', { pattern = 'SessionSavePre' })
       end,
     })
 
-    -- -- After loading a session, open nvim-tree by default
-    -- vim.api.nvim_create_autocmd({ 'User' }, {
-    --   pattern = 'PersistedLoadPost',
-    --   group = group,
-    --   callback = function(session)
-    --     require('nvim-tree.api').tree.open()
-    --   end,
-    -- })
-    --
-    -- vim.api.nvim_create_autocmd({ 'User' }, {
-    --   pattern = 'PersistedTelescopeLoadPre',
-    --   group = group,
-    --   callback = function(session)
-    --     -- Save the currently loaded session using a global variable
-    --     require('persisted').save { session = vim.g.persisted_loaded_session }
-    --
-    --     -- Delete all of the open buffers
-    --     vim.api.nvim_input '<ESC>:%bd!<CR>'
-    --   end,
-    -- })
   end,
 }

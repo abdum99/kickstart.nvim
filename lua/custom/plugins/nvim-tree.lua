@@ -108,7 +108,7 @@ return {
     }
 
     vim.keymap.set('n', '<leader>E', ':NvimTreeFindFile<CR>')
-    vim.keymap.set('n', '<leader>e', ':NvimTreeOpen<CR>')
+    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
     vim.keymap.set('n', '<C-e>', ':NvimTreeFindFile<CR>')
     vim.keymap.set('n', '<C-S-E>', ':NvimTreeToggle<CR>')
 

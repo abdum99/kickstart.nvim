@@ -5,26 +5,30 @@ keymap.set('v', '<leader>y', '+y')
 -- Clear search highlights on <Esc>
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-------------------------
 -- Buffer Controls
 -------------------------
 keymap.set('n', '<leader>b', '<Cmd>BufferPick<CR>', { desc = 'Buffer Pick' })
 
 -- Sadly I can't map '<C-[>' bc that's the same sequence as <Esc> "(
-keymap.set({ 'n', 'i', 'v' }, '<C-q>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
-keymap.set({ 'n', 'i', 'v' }, '<C-e>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', '[[', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '[<leader>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '<leader>[', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
+
 keymap.set('n', ']]', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', ']<leader>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', '<leader>]', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 
-keymap.set({ 'n', 'i', 'v' }, '<C-;>', '<Cmd>lua print("TODO: pin tabs")<CR>', { desc = 'Pin Buffer' })
+keymap.set('n', '<leader>p', '<Cmd>BufferPin<CR>', { desc = 'Pin Buffer' })
+keymap.set('n', '<leader>;', '<Cmd>BufferPick<CR>', { desc = 'Pin Buffer' })
+
 keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
+keymap.set('n', '<leader>q', '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
 
 -- <Ctrl-x> to close buffer
 keymap.set('n', '<C-x>', '<Cmd>BufferClose<CR>')
 
+-------------------------
 -- WINDOW managemenet
 -------------------------
 --  See `:help wincmd` for a list of all window commands

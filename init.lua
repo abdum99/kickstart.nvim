@@ -1,24 +1,9 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
-
--- disable netrw at the very start of your init.lua
--- for nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-vim.g.tabstop = 4
-
+require 'config.globals'
 -- NeoVim Options
-require 'options'
+require 'config.options'
 
 -- NeoVim Remaps
-require 'remaps'
+require 'config.remaps'
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -39,7 +24,8 @@ require 'lazy-plugins'
 
 -- Theme
 vim.o.background = 'dark'
-vim.cmd.colorscheme 'bamboo'
+vim.cmd.colorscheme 'sonokai'
+vim.g.sonokai_style = 'andromeda'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

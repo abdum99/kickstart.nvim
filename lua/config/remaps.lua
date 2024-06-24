@@ -41,13 +41,15 @@ keymap.set({ 'n', 'i', 'v' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the
 -- Tabs
 -------------------------
 -- TODO: use telescope here instead
-keymap.set('n', '<leader>tt', ':tabnew')
+keymap.set('n', '<leader>tt', ':tabnew ', { desc = '[T]ab [T]ab (new)' })
+keymap.set('n', '<leader>te', ':tabedit ', { desc = '[T]ab [E]dit' })
 keymap.set('n', '<C-t>', '<C-w>T')
+keymap.set('n', '<leder>tq', ':tabclose<CR>', { desc = '[T]ab [Q]uit' })
 
-keymap.set('n', '<leader>tn', ':tabnext<CR>')
-keymap.set('n', '<leader>tp', ':tabprevious<CR>')
-keymap.set('n', '<leader>th', ':tabfirst<CR>')
-keymap.set('n', '<leader>tl', ':tablast<CR>')
+keymap.set('n', '<leader>tn', ':tabnext<CR>', { desc = '[T]ab [N]ext' })
+keymap.set('n', '<leader>tp', ':tabprevious<CR>', { desc = '[T]ab [P]revious' })
+keymap.set('n', '<leader>th', ':tabfirst<CR>', { desc = '[T]ab [H] First' })
+keymap.set('n', '<leader>tl', ':tablast<CR>', { desc = '[T]ab [L]ast' })
 
 -- Split
 -------------------------

@@ -10,18 +10,29 @@ keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -------------------------
 keymap.set('n', '<leader>b', '<Cmd>BufferPick<CR>', { desc = 'Buffer Pick' })
 
--- Sadly I can't map '<C-[>' bc that's the same sequence as <Esc> "(
+-- Previous Buffer
+keymap.set('n', '<S-H>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '[[', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '[<leader>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '<leader>[', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 
+-- Next Buffer
+keymap.set('n', '<S-L>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', ']]', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', ']<leader>', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 keymap.set('n', '<leader>]', '<Cmd>BufferNext<CR>', { desc = 'Next Buffer' })
 
-keymap.set('n', '<leader>p', '<Cmd>BufferPin<CR>', { desc = 'Pin Buffer' })
-keymap.set('n', '<leader>;', '<Cmd>BufferPick<CR>', { desc = 'Pin Buffer' })
+keymap.set('n', '<leader>;', '<Cmd>BufferPick<CR>', { desc = 'Pick Buffer' })
 
+keymap.set('n', '<leader>p', '<Cmd>BufferPin<CR>', { desc = 'Pin Buffer' })
+
+-- Move
+keymap.set('n', '<leader>bmh', '<Cmd>BufferMovePrevious<CR>', { desc = '[B]uffer [M]ove [H]'})
+keymap.set('n', '<leader>bml', '<Cmd>BufferMoveNext<CR>', { desc = '[B]uffer [M]ove [L]'})
+keymap.set('n', '<leader>bmk', '<Cmd>BufferMoveFirst<CR>', { desc = '[B]uffer [M]ove [J]'})
+keymap.set('n', '<leader>bmj', '<Cmd>BufferMoveLast<CR>', { desc = '[B]uffer [M]ove [K]'})
+
+-- Close
 keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
 keymap.set('n', '<leader>q', '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
 
@@ -43,8 +54,8 @@ keymap.set({ 'n', 'i', 'v' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the
 -- TODO: use telescope here instead
 keymap.set('n', '<leader>tt', ':tabnew ', { desc = '[T]ab [T]ab (new)' })
 keymap.set('n', '<leader>te', ':tabedit ', { desc = '[T]ab [E]dit' })
-keymap.set('n', '<C-t>', '<C-w>T')
 keymap.set('n', '<leder>tq', ':tabclose<CR>', { desc = '[T]ab [Q]uit' })
+keymap.set('n', '<C-t>', '<C-w>T')
 
 keymap.set('n', '<leader>tn', ':tabnext<CR>', { desc = '[T]ab [N]ext' })
 keymap.set('n', '<leader>tp', ':tabprevious<CR>', { desc = '[T]ab [P]revious' })

@@ -26,14 +26,14 @@ return {
 
     symbols = {
       filter = {
-        'Property',
-        'Field',
+        -- 'Property',
+        -- 'Field',
         'Variable',
         'String',
         'Number',
         'Boolean',
         'Array',
-        'Object',
+        -- 'Object',
         'Key',
         'Null',
         'EnumMember',

@@ -8,8 +8,6 @@ keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -------------------------
 -- Buffer Controls
 -------------------------
-keymap.set('n', '<leader>b', '<Cmd>BufferPick<CR>', { desc = 'Buffer Pick' })
-
 -- Previous Buffer
 keymap.set('n', '<S-H>', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
 keymap.set('n', '[[', '<Cmd>BufferPrevious<CR>', { desc = 'Previous Buffer' })
@@ -27,10 +25,10 @@ keymap.set('n', '<leader>;', '<Cmd>BufferPick<CR>', { desc = 'Pick Buffer' })
 keymap.set('n', '<leader>p', '<Cmd>BufferPin<CR>', { desc = 'Pin Buffer' })
 
 -- Move
-keymap.set('n', '<leader>bmh', '<Cmd>BufferMovePrevious<CR>', { desc = '[B]uffer [M]ove [H]'})
-keymap.set('n', '<leader>bml', '<Cmd>BufferMoveNext<CR>', { desc = '[B]uffer [M]ove [L]'})
-keymap.set('n', '<leader>bmk', '<Cmd>BufferMoveFirst<CR>', { desc = '[B]uffer [M]ove [J]'})
-keymap.set('n', '<leader>bmj', '<Cmd>BufferMoveLast<CR>', { desc = '[B]uffer [M]ove [K]'})
+keymap.set('n', '<leader>bh', '<Cmd>BufferMovePrevious<CR>', { desc = '[B]uffer [M]ove [H]'})
+keymap.set('n', '<leader>bl', '<Cmd>BufferMoveNext<CR>', { desc = '[B]uffer [M]ove [L]'})
+keymap.set('n', '<leader>bj', '<Cmd>BufferMoveFirst<CR>', { desc = '[B]uffer [M]ove [J]'})
+keymap.set('n', '<leader>bk', '<Cmd>BufferMoveLast<CR>', { desc = '[B]uffer [M]ove [K]'})
 
 -- Close
 keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
@@ -39,6 +37,9 @@ keymap.set('n', '<leader>q', '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
 -- <Ctrl-x> to close buffer
 keymap.set('n', '<C-x>', '<Cmd>BufferClose<CR>')
 
+
+-- Edit file
+keymap.set('n', '<leader>e', ':e ', { desc = '[E]dit file'})
 -------------------------
 -- WINDOW managemenet
 -------------------------
@@ -49,6 +50,7 @@ keymap.set({ 'n', 'i', 'v' }, '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the
 keymap.set({ 'n', 'i', 'v' }, '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 keymap.set({ 'n', 'i', 'v' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-------------------------
 -- Tabs
 -------------------------
 -- TODO: use telescope here instead
@@ -62,6 +64,7 @@ keymap.set('n', '<leader>tp', ':tabprevious<CR>', { desc = '[T]ab [P]revious' })
 keymap.set('n', '<leader>th', ':tabfirst<CR>', { desc = '[T]ab [H] First' })
 keymap.set('n', '<leader>tl', ':tablast<CR>', { desc = '[T]ab [L]ast' })
 
+-------------------------
 -- Split
 -------------------------
 keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit [V]ertically' })
@@ -69,7 +72,9 @@ keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit [H]orizontally' })
 keymap.set('n', '<leader>se', '<C-w>=', { desc = '[S]plit [E]qual size' })
 keymap.set('n', '<leader>sx', '<Cmd>close<CR>', { desc = '[S]plit e[X]it' })
 
+-------------------------
 -- Diagnostic keymaps
+-------------------------
 keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 keymap.set('n', 'ge', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })

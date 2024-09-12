@@ -13,3 +13,5 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.g.tabstop = 2
 
+-- relative line numbers
+vim.wo.relativenumber = true

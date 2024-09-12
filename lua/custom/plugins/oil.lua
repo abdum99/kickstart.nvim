@@ -28,15 +28,34 @@ return {
         -- Telescope search the current dir
         ['<leader>ff'] = {
           function()
+            cwd = require('oil').get_current_dir()
+            require('oil').close()
             require('telescope.builtin').find_files {
-              cwd = require('oil').get_current_dir(),
+              cwd = cwd,
             }
           end,
           mode = 'n',
           nowait = true,
           desc = 'Find files in the current directory',
         },
+        -- Telescope grep the current dir
+        ['<leader>fg'] = {
+          function()
+            cwd = require('oil').get_current_dir()
+            require('oil').close()
+            require('telescope.builtin').live_grep {
+              cwd = cwd,
+            }
+          end,
+          mode = 'n',
+          nowait = true,
+          desc = 'Live grep in the current directory',
+        },
         ['q'] = 'actions.close',
+        ['<Esc>'] = 'actions.close',
+        ['y'] = function ()
+          vim.fn.fnamemodify(oil.get_cursor_entry().parsed_name, ":p:.")
+        end,
       },
     }
 

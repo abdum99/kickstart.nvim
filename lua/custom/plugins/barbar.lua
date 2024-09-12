@@ -18,11 +18,18 @@ return {
     --
     sidebar_filetypes = {
       -- Use the default values: {event = 'BufWinLeave', text = '', align = 'left'}
-      NvimTree = { text = 'File Explorer', align = 'center' },
+      -- NvimTree = { text = 'File Explorer', align = 'center' },
       Outline = { text = 'Symbols', align = 'center' },
     },
 
+    highlight_visible = false,
+
     animation = false,
+
+    icons = {
+      buffer_index = true,
+      -- buffer_number = true,
+    }
   },
   -- config = function()
   --   require('scope').setup {

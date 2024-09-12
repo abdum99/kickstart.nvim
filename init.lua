@@ -23,9 +23,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require 'lazy-plugins'
 
 -- Theme
-vim.o.background = 'dark'
+-- vim.o.background = 'dark'
 vim.cmd.colorscheme 'sonokai'
-vim.g.sonokai_style = 'andromeda'
+vim.g.sonokai_style = 'atlantis'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

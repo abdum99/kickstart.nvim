@@ -21,6 +21,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    { 'jsongerber/telescope-ssh-config' }, -- ssh connections
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -63,6 +64,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
+
+        },
+
+        ['ssh-config'] = {
+            client = 'oil', -- or 'netrw'
+            ssh_config_path = '~/.ssh/config',
         },
       },
     }
@@ -72,6 +79,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
     local telescope = require 'telescope'
     pcall(telescope.load_extension, 'fzf')
     pcall(telescope.load_extension, 'ui-select')
+    -- …other Telescope extensions
+    pcall(telescope.load_extension, 'ssh-config')
     pcall(telescope.load_extension, 'persisted')
     pcall(telescope.load_extension, 'scope')
 
@@ -83,12 +92,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
     vim.keymap.set('n', '<leader>ft', builtin.builtin, { desc = '[F]ind [T]elescope' })
+
     vim.keymap.set('n', '<leader>fs', persisted.persisted, { desc = '[F]ind [S]essions' })
+
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord' })
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })
+
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
     vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
+
+    -- map :Telescope ssh-config to a keymap
+    vim.keymap.set('n', '<leader>fc', '<cmd>Telescope ssh-config<CR>', { desc = '[F]ind [C]onnection (ssh)' })
     vim.keymap.set('n', '<leader><leader>', '<Cmd>Telescope scope buffers<CR>', {
       desc = '[ ] Find existing buffers',
       -- sort_mru = true,
@@ -119,3 +134,4 @@ return { -- Fuzzy Finder (files, lsp, etc)
     end, { desc = '[F]earch [N]eovim files' })
   end,
 }
+

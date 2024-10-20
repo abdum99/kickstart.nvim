@@ -17,15 +17,48 @@ return {
     'Shatur/neovim-ayu',
     lazy = false,
     priority = 1000,
-    config = function ()
-      require('ayu').setup({
+    config = function()
+      -- an attempt to merge current hl with future ones
+      -- problem is that this loads before other extensions...
+      -- best solution is to do this in other extensions instead
+      -- e.g. gitsigns, lspconfig, etc
+      --
+      -- local function get_full_hl_by_name(group)
+      --   local gui_hl = vim.api.nvim_get_hl_by_name(group, true)
+      --
+      --   local cterm = vim.api.nvim_get_hl_by_name(group, false)
+      --   local ctermfg, ctermbg = cterm.foreground, cterm.background
+      --   cterm.foreground, cterm.background = nil, nil
+      --
+      --   return vim.tbl_extend('error', gui_hl, {
+      --     ctermfg = ctermfg,
+      --     ctermbg = ctermbg,
+      --     cterm = cterm,
+      --   })
+      -- end
+      --
+      -- local function update_hl(group, vals)
+      --   local new_vals = vim.tbl_extend('force', vals, get_full_hl_by_name(group))
+      --   -- vim.api.nvim_set_hl(0, group, new_vals)
+      --   return new_vals
+      -- end
+
+      local colors = require 'ayu.colors'
+      colors.generate(false) -- false => no mirage variant of theme
+      print 'printing whats already there'
+      require('ayu').setup {
         mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
-        terminal = true, -- Set to `false` to let terminal manage its own colors.
-        overrides = {}, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
-      })
+        terminal = false, -- Set to `false` to let terminal manage its own colors.
+        overrides = { -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+          IncSearch = { bg = colors.special, fg = colors.bg, bold = true, italic = true },
+          MatchParen = { bg = colors.accent, fg = colors.bg },
+          LineNr = { bg = colors.selection_inactive },
+          CursorLineNr = { bg = colors.selection_inactive, fg = colors.accent },
+        },
+      }
     end,
-    init = function ()
-      vim.cmd.colorscheme 'ayu-mirage'
+    init = function()
+      vim.cmd.colorscheme 'ayu'
     end,
   },
   -- { -- You can easily change to a different colorscheme.

@@ -3,8 +3,4 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  require 'custom.plugins.scope',
-  require 'custom.plugins.barbar',
-  require 'custom.plugins.outline',
-  require 'custom.plugins.themes',
 }

@@ -177,15 +177,6 @@ return { -- LSP Configuration & Plugins
       -- tsserver = {},
       --
       eslint = {},
-      -- flow = {
-      --   cmd = { 'flow', 'lsp' },
-      --   filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx' },
-      --   root_dir = require('lspconfig.util').root_pattern '.flowconfig',
-      --   initializationOptions = {},
-      --   requireRootPattern = 1,
-      --   settings = {},
-      --   rootPatterns = {'.flowconfig'}
-      -- },
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},

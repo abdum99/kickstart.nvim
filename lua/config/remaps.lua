@@ -70,6 +70,10 @@ keymap.set('n', '<leader>tl', ':tablast<CR>', { desc = '[T]ab [L]ast' })
 keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit [V]ertically' })
 keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit [H]orizontally' })
 keymap.set('n', '<leader>se', '<C-w>=', { desc = '[S]plit [E]qual size' })
+keymap.set('n', '<leader>s+', '15<C-w>+', { desc = '[S]plit Height +' })
+keymap.set('n', '<leader>s-', '15<C-w>-', { desc = '[S]plit Height -' })
+keymap.set('n', '<leader>s>', '15<C-w>>', { desc = '[S]plit Width >' })
+keymap.set('n', '<leader>s<', '15<C-w><', { desc = '[S]plit Height <' })
 keymap.set('n', '<leader>sx', '<Cmd>close<CR>', { desc = '[S]plit e[X]it' })
 
 -------------------------

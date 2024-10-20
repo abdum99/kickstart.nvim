@@ -25,7 +25,7 @@ return {
       })
     end,
     init = function ()
-      vim.cmd.colorscheme 'ayu-dark'
+      vim.cmd.colorscheme 'ayu-mirage'
     end,
   },
   -- { -- You can easily change to a different colorscheme.

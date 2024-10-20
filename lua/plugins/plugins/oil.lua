@@ -52,10 +52,9 @@ return {
           desc = 'Live grep in the current directory',
         },
         ['q'] = 'actions.close',
-        ['<Esc>'] = 'actions.close',
-        ['y'] = function ()
-          vim.fn.fnamemodify(oil.get_cursor_entry().parsed_name, ":p:.")
-        end,
+        -- ['y'] = function ()
+        --   vim.fn.fnamemodify(oil.get_cursor_entry().parsed_name, ":p:.")
+        -- end,
       },
     }
 

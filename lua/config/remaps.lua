@@ -30,16 +30,16 @@ keymap.set('n', '<leader>bl', '<Cmd>BufferMoveNext<CR>', { desc = '[B]uffer [M]o
 keymap.set('n', '<leader>bj', '<Cmd>BufferMoveFirst<CR>', { desc = '[B]uffer [M]ove [J]'})
 keymap.set('n', '<leader>bk', '<Cmd>BufferMoveLast<CR>', { desc = '[B]uffer [M]ove [K]'})
 
--- Close
-keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
+-- new buffer
+keymap.set('n', '<leader>e', ':e ', { desc = '[E]dit file'})
+keymap.set('n', '<leader>E', ':enew<CR>', { desc = 'new buffer'})
 keymap.set('n', '<leader>q', '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
+keymap.set('n', '<leader>Q', '<Cmd>bd!<CR>', { desc = 'Close Buffer !' })
 
 -- <Ctrl-x> to close buffer
 keymap.set('n', '<C-x>', '<Cmd>BufferClose<CR>')
 
 
--- Edit file
-keymap.set('n', '<leader>e', ':e ', { desc = '[E]dit file'})
 -------------------------
 -- WINDOW managemenet
 -------------------------
@@ -70,6 +70,10 @@ keymap.set('n', '<leader>tl', ':tablast<CR>', { desc = '[T]ab [L]ast' })
 keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit [V]ertically' })
 keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit [H]orizontally' })
 keymap.set('n', '<leader>se', '<C-w>=', { desc = '[S]plit [E]qual size' })
+keymap.set('n', '<leader>s+', '15<C-w>+', { desc = '[S]plit Height +' })
+keymap.set('n', '<leader>s-', '15<C-w>-', { desc = '[S]plit Height -' })
+keymap.set('n', '<leader>s>', '15<C-w>>', { desc = '[S]plit Width >' })
+keymap.set('n', '<leader>s<', '15<C-w><', { desc = '[S]plit Height <' })
 keymap.set('n', '<leader>sx', '<Cmd>close<CR>', { desc = '[S]plit e[X]it' })
 
 -------------------------
@@ -80,13 +84,15 @@ keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnosti
 keymap.set('n', 'ge', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 keymap.set('n', 'gq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+
+keymap.set('n', '<leader>ts', ':TSToggle highlight<CR>', { desc = '[T]oggle tree[S]itter' })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
 -- keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')

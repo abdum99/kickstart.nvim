@@ -30,16 +30,16 @@ keymap.set('n', '<leader>bl', '<Cmd>BufferMoveNext<CR>', { desc = '[B]uffer [M]o
 keymap.set('n', '<leader>bj', '<Cmd>BufferMoveFirst<CR>', { desc = '[B]uffer [M]ove [J]'})
 keymap.set('n', '<leader>bk', '<Cmd>BufferMoveLast<CR>', { desc = '[B]uffer [M]ove [K]'})
 
--- Close
-keymap.set({ 'n', 'i', 'v' }, "<C-'>", '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
+-- new buffer
+keymap.set('n', '<leader>e', ':e ', { desc = '[E]dit file'})
+keymap.set('n', '<leader>E', ':enew<CR>', { desc = 'new buffer'})
 keymap.set('n', '<leader>q', '<Cmd>BufferClose<CR>', { desc = 'Close Buffer' })
+keymap.set('n', '<leader>Q', '<Cmd>bd!<CR>', { desc = 'Close Buffer !' })
 
 -- <Ctrl-x> to close buffer
 keymap.set('n', '<C-x>', '<Cmd>BufferClose<CR>')
 
 
--- Edit file
-keymap.set('n', '<leader>e', ':e ', { desc = '[E]dit file'})
 -------------------------
 -- WINDOW managemenet
 -------------------------

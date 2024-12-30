@@ -45,7 +45,6 @@ return {
 
       local colors = require 'ayu.colors'
       colors.generate(false) -- false => no mirage variant of theme
-      print 'printing whats already there'
       require('ayu').setup {
         mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
         terminal = false, -- Set to `false` to let terminal manage its own colors.

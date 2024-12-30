@@ -28,15 +28,15 @@ require('lazy').setup({
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
+    -- opts = {
+    --   signs = {
+    --     add = { text = '+' },
+    --     change = { text = '~' },
+    --     delete = { text = '_' },
+    --     topdelete = { text = '‾' },
+    --     changedelete = { text = '~' },
+    --   },
+    -- },
   },
 
   require 'kickstart.plugins.telescope',
@@ -62,7 +62,6 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
